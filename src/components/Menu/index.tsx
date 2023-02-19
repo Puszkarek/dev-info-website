@@ -8,10 +8,12 @@ import {
   Puzzle,
   Search,
 } from "lucide-react";
+import { FC } from "react";
+
 import { MenuButton } from "../menu-button";
 import { SocialLinksMenuButton } from "../menu-social-link-buttom";
 
-export function Menu() {
+export const Menu: FC = () => {
   return (
     <div className="flex flex-col justify-between">
       <div className="flex flex-col">
@@ -29,4 +31,4 @@ export function Menu() {
       </div>
     </div>
   );
-}
+};

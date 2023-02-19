@@ -1,26 +1,26 @@
-'use client'
+"use client";
 
-import { useState } from "react"
-import { JetBrains_Mono } from "@next/font/google"
+import { useState } from "react";
+import { JetBrains_Mono } from "@next/font/google";
+import Icon from "@/components/icon";
+import { ICON_NAME } from "@/components/interfaces/icon";
 
-import { Copy as CopyIcon, CheckCircle2 as CheckIcon } from "lucide-react"
-
-const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'] })
+const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 interface CodePreviewProps {
-  code: string
-  raw?: string
+  code: string;
+  raw?: string;
 }
 
 export function CodePreview({ code, raw }: CodePreviewProps) {
-  const [hasCopiedToClipboard, setCopiedToClipboard] = useState(false)
+  const [hasCopiedToClipboard, setCopiedToClipboard] = useState(false);
 
   const handleCopyToClipboard = () => {
-    if (!raw) return
-    navigator.clipboard.writeText(raw)
-    setCopiedToClipboard(true)
-    setTimeout(() => setCopiedToClipboard(false), 2000)
-  }
+    if (!raw) return;
+    navigator.clipboard.writeText(raw);
+    setCopiedToClipboard(true);
+    setTimeout(() => setCopiedToClipboard(false), 2000);
+  };
 
   return (
     <>
@@ -32,12 +32,16 @@ export function CodePreview({ code, raw }: CodePreviewProps) {
         >
           {hasCopiedToClipboard ? (
             <>
-              <CheckIcon size={16} className="text-emerald-400" />
+              <Icon
+                name={ICON_NAME.checkCircleAlt}
+                size={16}
+                className="text-emerald-400"
+              />
               <span className="w-32">Copied!</span>
             </>
-          ): (
+          ) : (
             <>
-              <CopyIcon size={16} />
+              <Icon name={ICON_NAME.copyIcon} size={16} />
               <span className="w-32">Copy to Clipboard</span>
             </>
           )}
@@ -50,5 +54,5 @@ export function CodePreview({ code, raw }: CodePreviewProps) {
         dangerouslySetInnerHTML={{ __html: code }}
       />
     </>
-  )
+  );
 }

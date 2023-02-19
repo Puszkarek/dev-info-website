@@ -1,54 +1,15 @@
 "use client";
 
+import Icon from "@/components/icon";
+import { SOCIAL_LINKS } from "@/constants/menu";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import {
-  Github,
-  Instagram,
-  Linkedin,
-  Rocket,
-  Twitter,
-  User,
-  Youtube,
-} from "lucide-react";
-import { MenuButton } from "../menu-button";
-
-const socialLinks = [
-  {
-    name: "github",
-    url: "https://github.com/diego3g",
-    icon: <Github size={14} />,
-  },
-  {
-    name: "instagram",
-    url: "https://instagram.com/dieegosf",
-    icon: <Instagram size={14} />,
-  },
-  {
-    name: "linkedin",
-    url: "https://www.linkedin.com/in/diego-schell-fernandes/",
-    icon: <Linkedin size={14} />,
-  },
-  {
-    name: "rocketseat",
-    url: "https://www.rocketseat.com.br/",
-    icon: <Rocket size={14} />,
-  },
-  {
-    name: "twitter",
-    url: "https://twitter.com/dieegosf",
-    icon: <Twitter size={14} />,
-  },
-  {
-    name: "youtube",
-    url: "https://www.youtube.com/@rocketseat",
-    icon: <Youtube size={14} />,
-  },
-];
+import { User } from "lucide-react";
+import { MenuButton } from "@/components/menu-button";
 
 export function SocialLinksMenuButton() {
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger aria-label="Redes sociais">
+      <DropdownMenu.Trigger aria-label="Social Media">
         <MenuButton icon={User} />
       </DropdownMenu.Trigger>
 
@@ -57,7 +18,7 @@ export function SocialLinksMenuButton() {
           side="right"
           className="bg-[#2a273f] z-10 flex flex-col rounded-lg overflow-auto"
         >
-          {socialLinks.map((socialItem) => {
+          {SOCIAL_LINKS.map((socialItem) => {
             return (
               <DropdownMenu.Item key={socialItem.url} className="outline-none">
                 <a
@@ -66,7 +27,7 @@ export function SocialLinksMenuButton() {
                   rel="noreferrer"
                   className="text-[#E0DEF2] flex items-center gap-2 text-sm px-4 py-3 hover:bg-[#454066]"
                 >
-                  {socialItem.icon}
+                  <Icon name={socialItem.icon} size={14} color="black" />
                   {socialItem.name}
                 </a>
               </DropdownMenu.Item>
