@@ -1,4 +1,5 @@
 import shiki from "shiki";
+
 import { CodePreview } from "../code-preview";
 
 type GitContentProps = {
@@ -9,7 +10,7 @@ export const GitContent = async ({
   gitURL,
 }: GitContentProps): Promise<JSX.Element> => {
   const settingsResponse = await fetch(gitURL);
-  const settings = await settingsResponse.text();
+  const settings = (await settingsResponse.text()) as string;
 
   const highlighter = await shiki.getHighlighter({
     theme: "rose-pine-moon",

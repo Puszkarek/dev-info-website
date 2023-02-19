@@ -2,13 +2,13 @@
 
 import Link, { LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
-import { ReactNode } from "react";
+import { FC, ReactNode } from "react";
 
-interface FileProps extends LinkProps {
+type FileProps = LinkProps & {
   children: ReactNode;
-}
+};
 
-export function File(props: FileProps): JSX.Element {
+export const File: FC<FileProps> = (props) => {
   const pathName = usePathname();
 
   const isCurrentActive = pathName === props.href;
@@ -20,4 +20,4 @@ export function File(props: FileProps): JSX.Element {
       {...props}
     />
   );
-}
+};

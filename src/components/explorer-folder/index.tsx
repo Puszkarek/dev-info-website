@@ -2,7 +2,7 @@
 
 import * as Collapsible from "@radix-ui/react-collapsible";
 import { ChevronDown, ChevronRight, Folder as FolderIcon } from "lucide-react";
-import { ReactNode, useState } from "react";
+import { FC, ReactNode, useState } from "react";
 
 type FolderProps = {
   title: string;
@@ -10,11 +10,11 @@ type FolderProps = {
   defaultOpen?: boolean;
 };
 
-export function Folder({
+export const Folder: FC<FolderProps> = ({
   title,
   children,
   defaultOpen = false,
-}: FolderProps): JSX.Element {
+}) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
@@ -30,4 +30,4 @@ export function Folder({
       <Collapsible.Content>{children}</Collapsible.Content>
     </Collapsible.Root>
   );
-}
+};

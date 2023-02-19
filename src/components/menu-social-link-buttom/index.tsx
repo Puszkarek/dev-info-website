@@ -1,12 +1,14 @@
 "use client";
 
-import Icon from "@/components/icon";
-import { SOCIAL_LINKS } from "@/constants/menu";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { User } from "lucide-react";
-import { MenuButton } from "@/components/menu-button";
+import { FC } from "react";
 
-export function SocialLinksMenuButton() {
+import Icon from "@/components/icon";
+import { MenuButton } from "@/components/menu-button";
+import { SOCIAL_LINKS } from "@/constants/menu";
+
+export const SocialLinksMenuButton: FC = () => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger aria-label="Social Media">
@@ -38,4 +40,4 @@ export function SocialLinksMenuButton() {
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
   );
-}
+};

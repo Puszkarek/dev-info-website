@@ -1,13 +1,14 @@
-import "../styles/global.css";
+import "@/styles/global.css";
 
 import { Inter } from "@next/font/google";
+import { FC } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
-
-import { Menu } from "@/components/menu";
-import { Header } from "@/components/header";
 import { Explorer } from "@/components/explorer";
 import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { Menu } from "@/components/menu";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: {
@@ -22,11 +23,9 @@ export const metadata = {
     "CTO at @Rocketseat. Passionate about education and changing people's lives through programming.",
 };
 
-export default function RootLayout({
-  children,
-}: {
+const RootLayout: FC<{
   children: React.ReactNode;
-}) {
+}> = ({ children }) => {
   return (
     <html lang="en" className={inter.className}>
       <head />
@@ -48,4 +47,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

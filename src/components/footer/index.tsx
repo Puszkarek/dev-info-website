@@ -1,7 +1,9 @@
+import { FC } from "react";
+
 import Icon from "@/components/icon";
 import { ICON_NAME } from "@/components/interfaces/icon";
 
-export function Footer() {
+export const Footer: FC = () => {
   return (
     <div className="text-sm px-3 text-[#8F8CA8] flex gap-3 items-center justify-end bg-[#2a273f]">
       <a
@@ -15,4 +17,4 @@ export function Footer() {
       </a>
     </div>
   );
-}
+};

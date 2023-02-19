@@ -1,25 +1,31 @@
 "use client";
 
-import { useState } from "react";
 import { JetBrains_Mono } from "@next/font/google";
+import { FC, useState } from "react";
+
 import Icon from "@/components/icon";
 import { ICON_NAME } from "@/components/interfaces/icon";
 
 const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
-interface CodePreviewProps {
+type CodePreviewProps = {
   code: string;
   raw?: string;
-}
+};
 
-export function CodePreview({ code, raw }: CodePreviewProps) {
+export const CodePreview: FC<CodePreviewProps> = ({ code, raw }) => {
   const [hasCopiedToClipboard, setCopiedToClipboard] = useState(false);
 
-  const handleCopyToClipboard = () => {
-    if (!raw) return;
-    navigator.clipboard.writeText(raw);
+  const handleCopyToClipboard = async (): Promise<void> => {
+    if (!raw) {
+      return;
+    }
+    await navigator.clipboard.writeText(raw);
+
     setCopiedToClipboard(true);
-    setTimeout(() => setCopiedToClipboard(false), 2000);
+
+    const timeoutTime = 2000;
+    setTimeout(() => setCopiedToClipboard(false), timeoutTime);
   };
 
   return (
@@ -55,4 +61,4 @@ export function CodePreview({ code, raw }: CodePreviewProps) {
       />
     </>
   );
-}
+};

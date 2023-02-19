@@ -1,8 +1,10 @@
 import { Cpu, FileJson, Joystick, MoreHorizontal } from "lucide-react";
+import { FC } from "react";
+
 import { File } from "../explorer-file";
 import { Folder } from "../explorer-folder";
 
-export function Explorer() {
+export const Explorer: FC = () => {
   return (
     <div className="py-2 px-4 text-[#8F8CA8]">
       <strong className="font-medium text-xs pl-2 flex items-center justify-between">
@@ -35,4 +37,4 @@ export function Explorer() {
       </nav>
     </div>
   );
-}
+};

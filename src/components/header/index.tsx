@@ -1,4 +1,6 @@
-export function Header() {
+import { FC } from "react";
+
+export const Header: FC = () => {
   return (
     <div className="flex items-center justify-between px-3">
       <div className="flex items-center gap-2">
@@ -7,5 +9,5 @@ export function Header() {
         <button type="button" className="w-3 h-3 bg-[#61C554] rounded-full" />
       </div>
     </div>
-  )
-}
+  );
+};

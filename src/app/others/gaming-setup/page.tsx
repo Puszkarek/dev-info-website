@@ -1,5 +1,6 @@
-import { CodePreview } from "@/components/code-preview";
 import shiki from "shiki";
+
+import { CodePreview } from "@/components/code-preview";
 
 export const metadata = {
   title: "Gaming Setup",
@@ -25,7 +26,7 @@ const markdown = `
 That's it, nothing more.
 `.trim();
 
-export default async function GamingSetup() {
+const GamingSetup = async (): Promise<JSX.Element> => {
   const highlighter = await shiki.getHighlighter({
     theme: "rose-pine-moon",
   });
@@ -33,4 +34,6 @@ export default async function GamingSetup() {
   const code = highlighter.codeToHtml(markdown, { lang: "md" });
 
   return <CodePreview code={code} />;
-}
+};
+
+export default GamingSetup;
