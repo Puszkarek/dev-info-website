@@ -1,9 +1,9 @@
-import { CodePreview } from '@/components/CodePreview'
-import shiki from 'shiki'
+import { CodePreview } from "@/components/code-preview";
+import shiki from "shiki";
 
 export const metadata = {
-  title: 'Dev Setup',
-}
+  title: "Dev Setup",
+};
 
 const markdown = `
 # Dev Setup
@@ -12,14 +12,14 @@ const markdown = `
 - LG 25" UltraWide Display
 
 That's it, nothing more.
-`.trim()
- 
+`.trim();
+
 export default async function DevSetup() {
   const highlighter = await shiki.getHighlighter({
-    theme: 'rose-pine-moon',
-  })
+    theme: "rose-pine-moon",
+  });
 
-  const code = highlighter.codeToHtml(markdown, { lang: 'md' })
+  const code = highlighter.codeToHtml(markdown, { lang: "md" });
 
-  return <CodePreview code={code} />
+  return <CodePreview code={code} />;
 }
