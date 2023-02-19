@@ -1,4 +1,4 @@
-import { GitContent } from "@/components/gits-content";
+import { GitContent } from "@/components/git-content";
 
 export const metadata = {
   title: "VSCode Settings",
