@@ -1,6 +1,15 @@
-import { Bug, Cog, Files, FlaskConical, GitFork, Monitor, Puzzle, Search } from 'lucide-react'
-import { MenuButton } from './MenuButton'
-import { SocialLinksMenuButton } from './SocialLinksMenuButton'
+import {
+  Bug,
+  Cog,
+  Files,
+  FlaskConical,
+  GitFork,
+  Monitor,
+  Puzzle,
+  Search,
+} from "lucide-react";
+import { MenuButton } from "../menu-button";
+import { SocialLinksMenuButton } from "../menu-social-link-buttom";
 
 export function Menu() {
   return (
@@ -19,5 +28,5 @@ export function Menu() {
         <MenuButton icon={Cog} />
       </div>
     </div>
-  )
+  );
 }

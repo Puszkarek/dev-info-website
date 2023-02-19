@@ -1,6 +1,6 @@
 import { Cpu, FileJson, Joystick, MoreHorizontal } from "lucide-react";
-import { File } from "./File";
-import { Folder } from "./Folder";
+import { File } from "../explorer-file";
+import { Folder } from "../explorer-folder";
 
 export function Explorer() {
   return (

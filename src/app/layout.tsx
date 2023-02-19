@@ -4,9 +4,9 @@ import { Inter } from "@next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-import { Menu } from "@/components/Menu";
+import { Menu } from "@/components/menu";
 import { Header } from "@/components/header";
-import { Explorer } from "@/components/Explorer";
+import { Explorer } from "@/components/explorer";
 import { Footer } from "@/components/footer";
 
 export const metadata = {
