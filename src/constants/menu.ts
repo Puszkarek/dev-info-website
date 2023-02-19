@@ -1,4 +1,4 @@
-import { ICON_NAME } from "@/components/interfaces/icon";
+import { ICON_NAME } from "@/interfaces/icon";
 
 export const SOCIAL_LINKS: ReadonlyArray<{
   name: string;

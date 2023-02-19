@@ -4,7 +4,7 @@ import { JetBrains_Mono } from "@next/font/google";
 import { FC, useState } from "react";
 
 import Icon from "@/components/icon";
-import { ICON_NAME } from "@/components/interfaces/icon";
+import { ICON_NAME } from "@/interfaces/icon";
 
 const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 

@@ -9,8 +9,8 @@ export const metadata = {
 const markdown = `
 # Dev Setup
 
-- MacBook M1 Max (64gb Memory)
-- LG 25" UltraWide Display
+- Lenovo Legion 5i
+- Logitech MX Master 3
 
 That's it, nothing more.
 `.trim();

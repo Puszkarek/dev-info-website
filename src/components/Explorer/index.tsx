@@ -29,10 +29,6 @@ export const Explorer: FC = () => {
             <Cpu size={16} />
             dev.setup
           </File>
-          <File href="/others/gaming-setup">
-            <Joystick size={16} />
-            gaming.setup
-          </File>
         </Folder>
       </nav>
     </div>
