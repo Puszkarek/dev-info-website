@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container,
+.main-items,
+.profile-items {
+  @apply flex flex-col;
+}
+
+.container {
+  @apply justify-between;
+}
+
+.profile-items {
+  @apply items-center;
+}

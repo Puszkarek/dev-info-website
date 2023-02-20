@@ -1,3 +1,5 @@
+import "./style.scss";
+
 import {
   Bug,
   Cog,
@@ -15,8 +17,8 @@ import { SocialLinksMenuButton } from "../menu-social-link-buttom";
 
 export const Menu: FC = () => {
   return (
-    <div className="flex flex-col justify-between">
-      <div className="flex flex-col">
+    <div className="container">
+      <div className="main-items">
         <MenuButton icon={Files} isActive />
         <MenuButton icon={Search} />
         <MenuButton icon={GitFork} />
@@ -25,7 +27,7 @@ export const Menu: FC = () => {
         <MenuButton icon={Monitor} />
         <MenuButton icon={FlaskConical} />
       </div>
-      <div className="flex flex-col items-center">
+      <div className="profile-items ">
         <SocialLinksMenuButton />
         <MenuButton icon={Cog} />
       </div>
